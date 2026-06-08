@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Milestone Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/telegram_milestone_bot
+EnvironmentFile=/opt/telegram_milestone_bot/.env
+ExecStart=/opt/telegram_milestone_bot/.venv/bin/python -m app.main
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
